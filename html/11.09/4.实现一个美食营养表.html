@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <table border="1">
+    <tr>
+      <th colspan="2">Animals</th>
+    </tr>
+    <tr>
+      <th colspan="2">Hippopotamus</th>
+    </tr>
+    <tr>
+      <th rowspan="2">Horse</th>
+      <td>Mare</td>
+    </tr>
+    <tr>
+      <td >Stallion</td>
+    </tr>
+    <tr>
+      <th colspan="2">Crocodile</th>
+    </tr>
+    <tr>
+      <th rowspan="2">Chicken</th>
+      <td>Hen</td>
+    </tr>
+    <tr>
+      <td>Rooster</td>
+    </tr>
+    </table>
+    <hr>
+    <table border="1">
+        <thead>
+            <h1>餐食营养数据</h1>
+            <caption>餐食的一些数据。（资料取自<a href="xxx">cupcakes kale chips</a>，图片取自<a href="xxx">cupcakes kale chips 照片库</a>。）</caption>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2" colspan="2">&nbsp;</td>
+                <th rowspan="2" scope="col">姓名</th>
+                <th rowspan="2" scope="col">图片</th> 
+                <th rowspan="2" scope="col">Calories</th>
+                <th colspan="4" scope="colgroup">Fat(g)</th>
+                <th rowspan="2" scope="col">Cholesterol<br>(mg)</th>
+                <th rowspan="2" scope="col">Sodium<br>(mg)</th>
+                <th rowspan="2" scope="col">Vitamin<br>A(IU)</th>
+            </tr>
+            <tr>
+                <th scope="col">Saturated <br>Fat(g)</th>
+                <th scope="col">Trans<br> Fat(g)</th>
+                <th scope="col">Polyunsaturated <br>Fat(g)</th>
+                <th scope="col">Monounsaturated <br>Fat(g)</th>
+            </tr>
+            <tr>
+                <th rowspan="4" scope="rowgroup">breakfast</th>
+                <th rowspan="2" scope="rowgroup">breads</th>
+                <th scope="row">Gluten-<br>Free<br>Bread</th>
+                <td><img src="1.jpeg" width="35"></td>
+                <td>134</td>
+                <td>1g</td>
+                <td>1g</td>
+                <td>1g</td>
+                <td>3g</td>
+                <td>20</td>
+                <td>162</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <th scope="row">Gluten<br>Free<br>Cinnamon<br>Raisin<br>Bagels</th>
+                <td><img src="2.jpeg" width="35"></td>
+                <td>390</td>
+                <td>1g</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>92</td>
+                <td>914</td>
+                <td>130</td>
+            </tr>
+            <tr>
+                <th rowspan="2" scope="rowgroup">Drinks</th>
+                <th scope="row">Chocolate<br>Pumpkin<br>Smoothie</th>
+                <td><img src="3.jpeg" width="35"></td>
+                <td>297</td>
+                <td>3</td>
+                <td>&nbsp;</td>
+                <td>1</td>
+                <td>2</td>
+                <td>10</td>
+                <td>324</td>
+                <td>22021</td>
+            </tr>
+            <tr>
+                <th scope="row">Peanut<br> Butter <br>and Jelly <br>Smoothie</th>
+                <td><img src="4.jpeg" width="35"></td>
+                <td>460</td>
+                <td>5</td>
+                <td>&nbsp;</td>
+                <td>5</td>
+                <td>8</td>
+                <td>10</td>
+                <td>209</td>
+                <td>&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <p><b>1.scope 可以取的值有哪些，它有什么作用？</b></p>
+    <p>scope可取row col rowgroup colgroup 分别代表表头对应的不同行列情况</p>
+    <p><b>2.thead>，tbody>，tfoot>有什么含义？应该在哪里使用它们？</b></p>
+    <p>表头、表体、表下注；顾名思义</p>
+    <p><b>3.表格标题用什么元素表示？</b></p>
+    <p>caption</p>
+    <p><b>4.th>， thead> ，tr>有什么区别？</b></p>
+    <p>th表头；thead表语义上的头部区域；tr代表一行</p>
+    <p><b>5.表格跨两行，跨两列应该怎么表示？</b></p>
+    <p>rowspan=2 colspan=2</p>
+    </body>
+  </html>
+
+
+  

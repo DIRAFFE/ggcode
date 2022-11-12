@@ -1,0 +1,46 @@
+.card{
+    text-align: center;
+    font-family:Rubik, Arial;
+    width: 500px;
+    padding: 50px;
+    margin: 50px;
+    background-color: #fff;
+    border-style: solid;
+    border-color:#ddd;
+}
+#img_doge{
+    width: 100px;
+    height: 100px;
+}
+h1{
+    font-size: 30px;
+    font-weight: 300px;
+    line-height: 32px;
+    padding: 15px;
+}
+h2{
+    font-size: 18px;
+    font-weight: 300px;
+    color:#aaa;
+    line-height: 16px;
+    padding:5px;
+}
+hr{
+    width: 200px;
+    border: 1px solid #ddd;   
+}
+p{
+    font-weight: 500px;
+    line-height: 32px;
+}
+ul{
+    font-weight: 500px;
+    line-height: 28px;
+}
+li{
+    border: 1px solid #eee;
+    padding: 5px;
+}
+a{
+    color:aaa;
+}
