@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+            .board{
+                width: 1100px;
+                background-color: rgb(233, 225, 225);
+                text-align:center;
+                
+            }
+            .a1{
+                border:5px solid lightgreen;
+                 
+            }
+            .a2{
+                border:5px double lightgreen;
+            }
+            .a3{
+                border:5px dashed lightgreen;   
+            }
+            .a4{
+                border:5px dotted lightgreen;    
+            }
+            .a5{
+                border:20px groove lightgreen;     
+            }
+            .a6{
+                border:20px ridge lightgreen;    
+            }
+            .a7{
+                border:20px inset lightgreen;     
+            }
+            .a8{
+                border:20px outset lightgreen;     
+            }
+
+        
+            .up{
+                width: 200px;
+                height: 200px; 
+                line-height: 200px;
+                margin: 20px;
+                background-color: white;
+                display: inline-block;
+                
+            }
+            .down{
+                width: 170px;
+                height: 170px; 
+                line-height: 170px;
+                margin: 20px;
+                background-color: white;
+                display: inline-block;
+            }
+            #ZZ{
+                text-align: center;
+            }
+            #AA{
+                background-image: url(background.png);
+                padding-left:300px;
+            }
+            #BB{
+                background-color: #FFF;
+                padding-left: 300px;
+            }
+            #CC{
+                background-color: #eee;
+                padding-left:300px;
+            }
+            #DD{
+                background-color: #FFF;
+                padding-left: 300px;
+            }
+
+        </style>
+    </head>
+    <body>
+    <div class="board">
+        <div class="up a1">1</div>
+        <div class="up a2">2</div>
+        <div class="up a3">3</div>
+        <div class="up a4">4</div><br>
+        <div class="down a5">5</div>
+        <div class="down a6">6</div>
+        <div class="down a7">7</div>
+        <div class="down a8">8</div>
+    </div>
+    <hr>
+    <p style="text-align: center;">文字垂直居中</p>
+    <p style="text-decoration: overline;">这是上划线</p>
+    <p style="text-decoration: line-through;">这是删除线</p>
+    <p style="text-decoration:underline;">这是下划线</p>
+    <p style="color:#000000;"><a href="#">这是链接</a></p>
+    <p style="letter-spacing: 10px;">字符间隔为10像素</p>
+    <p style="font-weight: bold;">这是粗体</p>
+    <p style="font-style: italic;">这是斜体</p>
+    <p style="font-variant: small-caps;">这是小型大写字母example</p>
+    <p style="font-size: 20px;">这是20像素大小字体</p>
+    <p style="text-align: right;">这是靠右对齐</p>
+    <p style="font-size: 2em;">这是2em大小字体</p>
+<p style="text-indent:2em" ;>
+  这是首行缩进这是首行缩进这是首行缩进这是首行缩进这是首行缩进这是首行缩进这是首行缩进这是首行缩进这是首行缩进这是首行缩进这是首行缩进这是首行缩进这是首行缩进
+</p>
+<hr>
+<div id="ZZ"><h1>个人简历</h1>
+<p>
+     <a href="#AA"><b>基本信息</b></a>&nbsp;&nbsp;&nbsp;
+     <a href="#BB"><b>工作经历</b></a>&nbsp;&nbsp;&nbsp;
+     <a href="#CC"><b>教育经历</b></a>&nbsp;&nbsp;&nbsp;
+     <a href="#DD"><b>语言技能</b></a>
+</p>
+</div>
+<div id="AA"><h2>基本信息</h2>
+<p><b>Name:</b>diraffe&nbsp;&nbsp;&nbsp;&nbsp; <b>Age:</b>29</p>
+<p><em>Tel:</em><u>13311022030</u></p></div>
+<div id="BB"><h2>工作经历</h2>
+<dl>
+<dt>SUMAVISION 2015-2018</dt>
+    <dd><em>Responsible for the economic and technical performance requirements of the project contract. <br>Coordinate the internal and external business relations of the project.</em></dd>
+    <dd><em>Organize or participate in the preparation of organizational design, the preparation of construction <br>process dynamics,project and production plans, 
+        and be responsible for the preparation and accounting <br> of budget cost plans after project completion.</em></dd>
+    <dd><em>Responsible for the completion of the project in terms of quality, duration, cost, safety and production <br>values and organizing the implementation of the whole process 
+        of prevention and control to improve <br>the quality assurance system and participate in process inspection and evaluation.</em></dd>
+    <dd><em>Responsible for project quality assessment and organizing the completion of projects.</em></dd>  
+</dl>
+</div>
+<div id="CC"><h2>教育经历</h2>
+<ul>
+<li>BUPT 2020-2022</li>
+<li>DUT &nbsp;2011-2015</li>
+</ul>
+</div>
+<div id="DD"><h2>语言技能</h2>
+<p>CET-6/PMP</p>
+</div>
+    <hr><hr>
+
+    <P>
+CSS 引入有几种方式？分别说说三种方式的使用方法和优缺点————外部link、内部head+style、内联标签；权重依次递增，便捷性复用性递减<br>
+CSS 的工作原理是什么？浏览器遇到无法解析的 CSS 会发生什么？————HTML--DOM--+CSS--展示；会直接忽略掉<br>
+CSS 选择器是什么概念，属性选择器，ID 选择器，类名选择器分别如何使用？————指明样式{}的作用对象；属性名、#ID、.类名<br>
+文本样式都有哪些相关属性，对应哪些值?———— weight、family、style、text align、line、letter spacing<br>
+如何设置一个虚线边框？————border dashed<br>
+CSS 边框属性简写上下左右设置的顺序是怎么样的？————顺时针，上右下左<br>
+文本如何实现想中文写作格式一样，首行空两格？————text-indent:2em<br>
+斜体，粗体，下划线分别怎么设置？————style italic;weight bold;decoration underline<br>
+如何注释 CSS 单行代码？多行呢？————/**/<br>
+说说 em 单位与 px 单位的区别？思考 em 与 rem 区别————em继承或默认字体大小、px像素；rem是相对html根元素的大小
+</body>
+    </P>
+</html>
