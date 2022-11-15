@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            function bmicompute(){
+                var x = document.getElementById("height").value;
+                var y = document.getElementById("weight").value;
+                var z = y/x/x*10000;
+                var r ="经过计算您的bmi为："+z+" "+"(≤18.4为消瘦、18.5-23.9为正常、24-27.9为超重、≥28为肥胖)";
+                document.getElementById("result").innerHTML=r;
+            }
+        </script>
+    </head>
+    <body>
+        <h2>BMI计算器</h2>
+        <p>请输入身高(cm)</p>
+        <input type="number" id="height">
+        <p>请输入体重(kg)</p>
+        <input type="number" id="weight">
+        <button type="button" onclick="bmicompute()">点击计算</button>
+        <p id="result"></p>
+       
+    </body>
+</html>
