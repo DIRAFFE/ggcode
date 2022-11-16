@@ -6,10 +6,99 @@
             function bmicompute(){
                 var x = document.getElementById("height").value;
                 var y = document.getElementById("weight").value;
-                var z = y/x/x*10000;
+                var z = Math.round( y/x/x*10000);
                 var r ="经过计算您的bmi为："+z+" "+"(≤18.4为消瘦、18.5-23.9为正常、24-27.9为超重、≥28为肥胖)";
                 document.getElementById("result").innerHTML=r;
+                console.log(z);}
+
+            function costvipcompute(){
+                //获取用户输入的初始价格
+                var cost =document.getElementById("price").value;
+                console.log(cost);
+                //判断是否为会员，遍历radio获取对应值
+                // function  getRadioBoxValue(vip) { 
+                //  var obj = document.getElementsByName(vip); 
+                //     for(i=0; i<obj.length;i++)  {
+                //         if(obj[i].checked)  { 
+                //          return  obj[i].value; 
+                //         } 
+                //     }     
+                //     return "undefined";    
+                // }
+                // var vip = true;
+
+                    //处理会员价格
+                    // if(vip==1){
+                        var x =cost*0.98;
+                    // }
+                    // else{
+                    //     var x =cost;
+                    // }
+                    // console.log(x);
+                    //处理满减
+                    if(x<0){
+                    alert("请输入正确金额");
+                     }
+                    else if(x>300)
+                    {
+                    var y = x - 30;
+                    }
+                    else{
+                    var y = x - Math.trunc(x/100)*10;
+                    }   
+            
+                document.getElementById("realCost").innerHTML="会员优惠后金额为："+y+"元";
+                
             }
+
+            function costnotvipcompute(){
+                //获取用户输入的初始价格
+                var cost =document.getElementById("price").value;
+                console.log(cost);
+                //判断是否为会员，遍历radio获取对应值
+                // function  getRadioBoxValue(vip) { 
+                //  var obj = document.getElementsByName(vip); 
+                //     for(i=0; i<obj.length;i++)  {
+                //         if(obj[i].checked)  { 
+                //          return  obj[i].value; 
+                //         } 
+                //     }     
+                //     return "undefined";    
+                // }
+                // var vip = true;
+
+                    //处理会员价格
+                    // if(vip==1){
+                        var x =cost;
+                    // }
+                    // else{
+                    //     var x =cost;
+                    // }
+                    // console.log(x);
+                    //处理满减
+                    if(x<0){
+                    alert("请输入正确金额");
+                     }
+                    else if(x>300)
+                    {
+                    var y = x - 30;
+                    }
+                    else{
+                    var y = x - Math.trunc(x/100)*10;
+                    }   
+            
+                document.getElementById("realCost").innerHTML="非会员优惠后金额为："+y+"元";
+                
+            }
+
+                // var vip =document.getElementsByName("vip");
+                // console.log(vipOrNot);
+                // if(vipOrNot=="1"){
+                //     var x=0.98*z
+                // }
+                // console.log(x);
+                
+            
         </script>
     </head>
     <body>
@@ -20,6 +109,16 @@
         <input type="number" id="weight">
         <button type="button" onclick="bmicompute()">点击计算</button>
         <p id="result"></p>
+        <hr>
+        <h2>满减计算器</h2>
+        <p>请输入优惠前金额(元)</p>
+        <input type="number" id="price">
+        <!-- <input type="radio" name="vip" value=1>我是会员
+        <input type="radio" name="vip" value=2>我不是会员 -->
+        <br>
+        <button type="button" onclick="costvipcompute()">我是会员</button>
+        <button type="button" onclick="costnotvipcompute()">我不是会员</button>
+        <p id="realCost"></p>
        
     </body>
 </html>
