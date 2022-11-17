@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            /**task1
+             * @description 实现判断参数是否为合法的数字类型，如果是返回 true ，如果不是 返回 false。
+             * @method isNumeric
+             * @param num 任意数据类型的变量
+             * @return {Boolean} 如何是数字类型返回 true ，如果不是 返回 false。
+             */
+            function isNumeric(num) {
+            //your code here
+                if(typeof num == "number"){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+            //测试用例
+            console.log(isNumeric("0")); // ->false
+            console.log(isNumeric(0)); // ->true
+            console.log(isNumeric(null)); // ->false
+            console.log(isNumeric("")); // ->false
+            console.log(isNumeric(" ")); // ->false
+
+             /*
+            实现一个判断传入的参数是否为 undefined 类型
+            返回一个布尔值，如果是undefined 为true，否之，为false
+            */
+            function isUndefined(arg){
+                //do something
+                if(typeof arg == "undefined"){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+            /*task2
+            实现一个判断传入的参数是否为 null 类型
+            返回一个布尔值，如果是null 为true，否之，为false
+            */
+            function isNull(arg){
+    
+                if(!arg && typeof arg !== "undefined" && arg!=0){
+                    return true;
+                }else{
+                    return false;
+                }
+            }
+
+            // 测试用例
+            var expUndefined = undefined;
+            var expNull = null;
+            var expZero = 0;
+            var a;
+            var o = new Object();
+            console.log(isUndefined(expUndefined)); // ->true
+            console.log(isUndefined(expNull)); // ->false
+            console.log(isUndefined(a)); // ->true
+            console.log(isUndefined(o)); // ->false
+            console.log(isNull(expUndefined)); // ->false
+            console.log(isNull(expNull)); // ->true
+            console.log(isNull(expZero)); // ->false
+            console.log(isNull(a)); // ->false
+            console.log(isNull(o)); // ->false
+            console.log("Hello Word + 1 + 2")
+            console.log("Hello Word " + 1 + 2)
+        </script>
+    </head>
+    <body>
+         <h3>结果见console</h3>
+         <hr>
+        <p>     javascript数据类型有哪些？——————number,string,boolean,null,undefined,symbol,array;object;function</p>
+        <p>     说说 undefined，null，NaN 之间的区别。——————未定义未赋值；已声明为空；无法解析失败的数学式</p>
+        <p>     请问console.log( "Hello World" % 4)会输出什么内容？——————NaN</p>
+        <p>     什么情况下 JavaScript 会发生隐式转换？请解释是如何转换——————显式类型转换（强制类型转换）：Number();parseInt();parseFloat();
+                    隐式类型转换：
+                    - * \/ \% 减、乘、除、取模可以将字符串转成数字
+                    + 加号可以将数字转成字符串
+                    ++ -- 加加、减减运算符可以把字符串转成数字
+                    < > 大于号、小于号可以把字符串转成数字，一定要注意是进行数字的比较还是字符串的比较
+                    ! 取反 把右边的数据类型转成布尔值
+                    ==</p>
+        <p>    下面代码将在控制台中输出什么内容?
+        <p>    console.log("Hello Word + 1 + 2");——————Hello Word +1 +2</p>
+        <p>     那这段代码将又将在控制台中输出什么内容——————
+        <p>     console.log("Hello Word " + 1 + 2);——————Hello Word12</p>
+        <p>    var、let、const 有什么区别?——————var变量提升；let作用于块内，不能重复声明（let x=a;x=b;可以 为值的修改 ）；const初始赋值不修改</p>
+        <p>    请解释变量提升现象？以及如何避免——————存在var未定义，即会提升为全局变量var=undefined；把变量声明放在作用域前面</p>
+        <p>    name和NAME是同一个变量吗？ -->——————不是，变量区分大小写</p>
+            
+    </body>
+</html>

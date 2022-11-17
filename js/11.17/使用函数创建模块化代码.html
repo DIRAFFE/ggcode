@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+            /*
+            * QUIZ REQUIREMENTS
+            * - Your code should have a `showMessage()` function
+            * - Your `laugh()` function should return the correct output
+            * - Your code should print `\"hello,stranger!\"` by calling the `showMessage()` function inside `console.log()`
+            * - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
+            */
+            // your code goes here
+                var showMessage=function(name){
+                    return "你好"+name;
+                }
+                var x = showMessage("张三");
+            console.log(x)/* 调用showMessage函数 */;
+            
+            //体温打卡
+
+            function temperatureBodyDetection(success,fail){
+            var tmp = prompt("请输入您的体温","请输入");
+            if(tmp>=36 & tmp<=38)
+                success(); /*执行成功函数*/  
+            else
+                fail(); /*执行失败函数*/   
+            }
+
+            var success = function(){
+                document.getElementById('result').innerHTML="体温正常，打卡成功！";
+            }
+            var fail = function(){
+                document.getElementById('result').innerHTML="体温异常，打卡失败！";
+            }
+
+             /**调用打卡函数**/
+        </script>
+    </head>
+    <body>
+        
+        <p id="output"></p>
+        <p id="result"></p>
+        <script>  setTimeout(() => {document.getElementById('output').innerHTML=x;          
+        }, 1000);
+        temperatureBodyDetection(success,fail)
+        </script>
+    </body>
+</html>
