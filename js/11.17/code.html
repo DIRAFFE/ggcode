@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <script>
+        /**
+     * @method calculateSum
+    * @param {number }price 打折钱的总消费额
+    * @param {Boolean}vip 是否为 vip
+     * @return {number} 返回打折后的总金额
+ */
+    function calculateSum(price,vip){
+        if(vip==true){
+            price=price*0.98;
+            pricejudge(price);
+            return price;
+            
+        }else if(vip==false){
+            
+            pricejudge(price);
+            return price;
+        }else{
+            alert("请正确输入会员信息")
+        }
+    }
+        
+        function pricejudge(x){
+            if(x<0){
+            alert("请输入正确金额")
+            }else if(x>=300){
+                x-=30;
+             }else if(x<200){
+                x-=5;
+             }else{
+                x-=10;
+            }
+             return x;
+            }    
+    
+
+    console.log(calculateSum(300,true))
+    console.log(calculateSum(300,false))
+     
+    </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
