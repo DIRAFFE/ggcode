@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <label>请输需要判断的水仙花数(三位数):</label><input type="number" id="inputNum">
+    <br>
+    <button onclick="numDaffodils()">开始判断</button>
+    <script>
+    function  numDaffodils(num) {
+          // 判断是否为水仙花数
+          //是不是数字
+          var num = document.getElementById("inputNum").value;
+        /*   console.log(typeof(num));
+          if(typeof(num) !== "number"){
+            alert("输入的不是数字，请重新输入")
+            return;
+          } */
+          //是否为n位数 n>=3 确定位数
+          var l = num.length;
+          if(l >= 3){
+            var x = num.split("");
+            var sum = 0;
+            for(var i=0;i<l;i++){
+                var sum = sum +Math.pow(x[i],3);
+            }
+                if(sum == num){
+                 alert("输入的数字"+num+"，是水仙花数")
+                 return;
+                }else{
+                alert("输入的数字，不是水仙花数")
+                return; 
+                }
+             
+          }else{
+            alert("输入的数字，不是水仙花数")
+            return;
+          }
+          //是否满足数字n 次幂=本身
+    }
+    </script>  
+  
+</body>
+</html>

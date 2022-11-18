@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label>请输入您的身高(cm):</label><input type="number" id="height" >
+    <br>
+    <label>请输入您的体重(kg):</label><input type="number" id="weight">
+    <br>
+    <button onclick="caculateBMI()">开始测量您的体型</button>
+    <p id="result"></p>
+    <script>
+        //在这里实现编写您的代码
+        function caculateBMI(){
+            var h = document.getElementById("height").value;
+            console.log(h);
+            var w = document.getElementById("weight").value;
+            console.log(w);
+            var x = w/h/h*10000;
+            console.log(x);
+                switch(true){
+                     case x<=18.5:
+                     alert("您是偏瘦体型，可以适当增肥咯");
+                     break;
+                     case x>18.5 && x<=25:
+                     alert("您是标准体型，保持的不错哟");
+                     break;
+                     case x>25 && x <=28:
+                     alert("您是微胖体型，可以多吃粗粮，让饮食结构更加健康吧！");
+                     break;
+                     case x>28 && x<=32:
+                     alert("您是肥胖体型，管住嘴迈开腿开始减肥吧！");
+                     break;
+                     case x>32:
+                     alert("您是肥胖体型，管住嘴迈开腿开始减肥吧！");
+                     break;
+                     default:
+                     alert("身高体重信息异常，请重新录入！");
+                     
+                }
+        }
+      
+
+    </script>
+</body>
+</html>
