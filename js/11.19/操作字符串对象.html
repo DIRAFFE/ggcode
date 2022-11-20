@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      /** * @param {string} firstStr
+       * * @param {string} lastStr */
+      function concatString(firstStr, lastStr) {
+        return firstStr.concat(lastStr);
+        //return firstStr+lastStr;
+      }
+      //测试用例
+      console.log(concatString("Jennie ", "Kim")); // "Jennie Kim"
+      console.log(concatString(" Congratulation！", "you are the winner")); //"Congratulation！，you are the winner"
+      /**
+       * @param {string} name
+       */
+      function sayHi(name) {
+        return `Hello,${name}`;
+      }
+
+      //测试用例
+      console.log(sayHi("Amy")); // "Hello, Amy"
+
+      /**
+       * @param {string} name
+       * slug 不应超过 15 个字符。当超过 15 个字符时，忽略第 15 个字符之后的所有内容。
+       * slug 应始终为小写。
+       * 空格字符应替换为破折号 (-)。
+       */
+      const convertToSlug = (name) => {
+        //your code here
+        var str = name.toLowerCase();
+        while (str.indexOf(" ") !== -1) {
+          str = str.replace(" ", "-");
+        }
+        if (str.length <= 15) {
+          return str;
+        } else {
+          return str.substr(0, 15);
+        }
+      };
+
+      // 测试用例
+      console.log(convertToSlug("to do list")); // "to-do-list"
+      console.log(convertToSlug("My SeCond BlOg")); // "my-second-blog"
+      console.log(convertToSlug("Grade inquiry of CET-4&6")); // "grade-inquiry-o"
+
+      //饮水
+      const data = [
+        "monday - 500ml",
+        "mONday - 330",
+        "monday - 150ml",
+        "Tuesday - 100ml",
+        "Tuesday - 330ml",
+        "weDnesDay - 230",
+        "TursDAy - 330ml",
+        "Friday - 500",
+        "Saturday - 100ml",
+        "sunday - 250",
+        "sunday - 100ml",
+      ];
+      var newdata = new Array();
+      //遍历数组
+      for (i = 0; i < data.length; i++) {
+        //字母小写
+        str = data[i].toLowerCase();
+        //替换字符
+        while (str.indexOf("-") !== -1) {
+          str = str.replace("-", ":");
+          //首字母大写
+          // str = str.slice(0, 1).toUpperCase() + str.slice(1);
+          //添加ml
+          if (str.indexOf("ml") == -1) {
+            str = str + "ml";
+          }
+          newdata.push(str);
+        }
+      }
+      console.log(newdata);
+
+      // TODO: 实现检索功能
+      /**
+       * @param {string} day
+       * @param {Array} data
+       */
+      const query = (day) => {
+        //your code here
+        //小写
+        day = day.toLowerCase();
+        //去空格
+        day = day.split(" ").join("");
+        //查找
+        var sum = new Array();
+        var totalDrink = 0;
+        for (i = 0; i < newdata.length; i++) {
+          arr = newdata[i];
+          if (arr.indexOf(day) !== -1) {
+            var temp = arr.slice(-5, -2);
+            sum.push(arr);
+            totalDrink = totalDrink + Number(temp);
+          }
+        }
+        console.log(totalDrink);
+        if (totalDrink < 500) {
+          console.log(`您在${day}的饮水量没有达标。`);
+        } else {
+          console.log(`您在${day}的饮水量达标啦！`);
+        }
+
+        return sum;
+      };
+
+      // 测试用例
+      console.log(query(" Tuesday   ")); // ["Tuesday - 100ml","Tuesday - 330ml"]
+      console.log(query("Friday")); // ["Friday - 500ml"]
+
+      //判断饮水量
+    </script>
+  </head>
+  <body></body>
+</html>
