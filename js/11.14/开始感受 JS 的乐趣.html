@@ -43,7 +43,14 @@
                 var y=document.getElementById("second-number").value;
                 document.getElementById("result").innerHTML=Number(x)/Number(y);
             }
-           
+                function hifunction(){
+                  var ctt="hi,dear"+" "+document.getElementById("sayhi").value;
+                  document.getElementById("hicontent").innerHTML=ctt;
+                }
         </script>
+<hr>
+      <input type="text" id="sayhi">
+      <button type="button" onclick="hifunction()">go</button>
+      <p id="hicontent"></p>
   </body>
 </html>

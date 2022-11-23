@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      /**
+       * @param {string} num1
+       * @param {string} num2
+       * @return {string} 返回 num1+num2
+       **/
+
+      function largeNumAdd() {
+        // 在这里实现大数相加函数 转换成字符串的相加
+        //1.获得字符串 对齐数位,左侧多补一个0
+        let num1 = document.getElementById("n1").value;
+        let num2 = document.getElementById("n2").value;
+        let l;
+        if (num1.length >= num2.length) {
+          l = num1.length;
+          num1 = num1.padStart(l + 1, "0");
+          num2 = num2.padStart(l + 1, "0");
+        } else {
+          l = num2.length;
+          num1 = num1.padStart(l + 1, "0");
+          num2 = num2.padStart(l + 1, "0");
+        }
+        console.log(l);
+        //2.分别相加
+        let arr1 = num1.split("");
+        let arr2 = num2.split("");
+        let temp;
+        let flag = 0;
+        let r = "";
+        console.log(arr1);
+        console.log(arr2);
+        for (let i = l; i >= 0; i--) {
+          temp = parseInt(arr1[i])+parseInt(arr2[i])+flag;
+          flag = Math.floor(temp/10);
+          r = temp + r; 
+        }
+        //3.整理结果 去掉多余的0
+        if(r.charAt(0)=='0'){
+          r=r.slice(1);
+        }
+        document.getElementById("result").innerHTML=r;
+        
+      }
+
+      //测试用例
+      // largeNumAdd("11", "123"); //->"134"
+      // largeNumAdd("235656", "746433225"); //->""746668881""
+      // largeNumAdd("3456786543355", "222222234567778"); //->"225679021111133"
+    </script>
+  </head>
+  <body>
+    <label>请输入num1：</label><input type="text" id="n1" /><br />
+    <label>请输入num2：</label><input type="text" id="n2" /><br />
+    <button onclick="largeNumAdd()">相加</button><br />
+    <div>结果是：</div><label id="result"></label>
+</html>

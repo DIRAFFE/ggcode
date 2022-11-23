@@ -76,13 +76,13 @@
         var content = document.getElementById("inputText").value;
         var contentArray = content.split("");
         console.log(contentArray);
-        var output = "";
+        let output = "";
 
-        for (i = 0; i < contentArray.length; i++) {
-          var output = output + contentArray[i];
+        for (let i = 0; i < contentArray.length; i++) {
           setTimeout(function () {
+            output = output + contentArray[i];
             document.getElementById("showText").innerHTML = output;
-          }, 3000);
+          }, 3000 * i);
         }
       }
     </script>
