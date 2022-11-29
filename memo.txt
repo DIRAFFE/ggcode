@@ -1,0 +1,10 @@
+1.document.getElementById("" '') //用单引号或者双引号
+2.console.log//断点调试输出
+3.num.toFixed(1)//保留一位小数   Math.round() //保留整数
+4.定义变量名 动+宾（宾首字母大写）
+5.return 必写，函数输出的内容。不写无法继续
+6.if(typeof num == "number")
+7.同步异步
+8.for(let i=0;i< ;i++)
+9.setTimeout（function,i*3000) 同步异步
+10.都用let

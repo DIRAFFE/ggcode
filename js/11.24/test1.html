@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      // let numbersOne = [1, 9, 11, 21, 6, 3, -7];
+      // let A1 = numbersOne.filter((number) => number > 9 && number < 20);
+      // // let A1 = numbersOne.filter(function (number) {
+      // //   return number > 9 && number < 20;
+      // // });
+      // console.log(A1);
+
+      // //   let positiveNum = numbers.filter(function (number) {
+      // //     return number > 0;
+      // //   });
+      // let positiveNum = numbersOne.filter((number) => number > 0);
+      // console.log(positiveNum);
+
+      // // //过滤器map练习(转换)
+      // let numbersTwo = [1, 3, 5, 7, 9];
+      // // let doubleNum = numbersTwo.map((number) => number * 2);
+      // let doubleNum = numbersTwo.map(function (number) {
+      //   return number * 2;
+      // });
+      // console.log(doubleNum);
+
+      // //过滤器reduce练习（遍历求和）
+      // // reduce((sum,value)=>{ ...return sum},初始值)
+      let numbersThree = [2, 4, 6, 8, 10];
+      // let sum = numbersThree.reduce((addsum, item) => {
+      //   addsum = addsum + item;
+      //   return addsum;
+      // }, 0);
+      let sum = numbersThree.reduce(function (addsum, item) {
+        addsum = addsum + item;
+        return addsum;
+      }, 0);
+      console.log(sum);
+      // //find(element => element>10) 返回匹配的第一项  else undefined
+      // //includes("content")练习 true or false
+      // //toString()
+      // //join("")
+
+      // //Task1
+      // let scores = ["88", "90", "100", "45", "60", "98", "32", "99", "80"];
+      // /**
+      //  * @description 计算学生的总分数
+      //  * @param {array} scores
+      //  * @return {number} 学生的总分数
+      //  */
+
+      // function getTotalScore(scores) {
+      //   // your code here
+      //   let sumsum = scores.reduce((scoreSum, tempValue) => {
+      //     scoreSum = parseInt(scoreSum) + parseInt(tempValue);
+      //     return scoreSum;
+      //   }, 0);
+      //   return sumsum;
+      // }
+
+      // /**
+      //  * @description 获得学生的平均分
+      //  * @param {array} scores
+      //  * @return {number} 学生的平均分
+      //  */
+      // function getTotalScore(scores) {
+      //   // your code here
+      //   let avrScore = parseInt(getTotalScore()) / parseInt(scores.length);
+      //   return avrScore;
+      // }
+
+      // /**
+      //  * @description 获得挂科的分数
+      //  * @param {array} scores
+      //  * @return {array} 返回没有及格的分数
+      //  */
+      // function getFailScores(scores) {
+      //   // your code here
+      //   let failScore = scores.filter((number) => number < 60);
+      //   return failScore;
+      // }
+
+      // /**
+      //  * @description 获得加五分之后的成绩单，如果加五分之后，分数超过了100，就取100分
+      //  * @param {array} scores
+      //  * @return {array} 新的成绩单
+      //  */
+      // function getAddFiveScores(scores) {
+      //   // your code here
+      //   let addScore = scores.map(function (number) {
+      //     if (number > 95) {
+      //       number = 100;
+      //     }
+      //     return number + 5;
+      //   });
+      //   return addScore;
+      // }
+
+      // /**
+      //  * @description 计算学生奖学金
+      //  * @param {array} scores
+      //  * @return { number} 奖学金
+      //  */
+      // function getPrize(scores) {
+      //   // your code here
+      //   let prizeScore = scores.filter((number) => number > 90);
+      //   let prizeCost = prizeScore.length * 100;
+      //   return prizeCost;
+      // }
+
+      // console.log(getTotalScore());
+      // console.log(getAverageScore());
+      // console.log(getFailScores());
+      // console.log(getAddFiveScores());
+      // console.log(getPrize());
+    </script>
+  </head>
+  <body></body>
+</html>

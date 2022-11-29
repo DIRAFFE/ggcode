@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      //过滤器filter练习（过滤）
+      //箭头函数filter((element)=>element...);
+      //普通函数filter(function(element){return element...;})   多了个function,多了个return
+      let numbersOne = [1, 9, 11, 21, 6, 3, -7];
+      let A1 = numbersOne.filter((number) => number > 9 && number < 20);
+      // let A1 = numbersOne.filter(function (number) {
+      //   return number > 9 && number < 20;
+      // });
+      // console.log(A1);
+
+      //过滤器map练习(转换)
+      //map语法和filter差不多　两种写法
+      let numbersTwo = [1, 3, 5, 7, 9];
+      let doubleNum = numbersTwo.map((number) => number * 2);
+      // let doubleNum = numbersTwo.map(function (number) {
+      //   return number * 2;
+      // });
+      // console.log(doubleNum);
+
+      //过滤器reduce练习（遍历求和）
+      // reduce((sum,value)=>{ ...return sum},初始值)
+      let numbersThree = [2, 4, 6, 8, 10];
+      let sum = numbersThree.reduce((addsum, value) => {
+        addsum = addsum + value;
+        return addsum;
+      }, 0);
+      // let sum = numbersThree.reduce(function (addsum, item) {
+      //   addsum = addsum + item;
+      //   return addsum;
+      // }, 0);
+      // console.log(sum);
+
+      //find(element => element>10) 返回匹配的第一项  else undefined
+      //includes("content")练习 true or false
+      //toString()
+      //join("")
+
+      //Task1
+      let scores = ["88", "90", "100", "45", "60", "98", "32", "99", "80"];
+      /**
+       * @description 计算学生的总分数
+       * @param {array} scores
+       * @return {number} 学生的总分数
+       */
+
+      // function getTotalScore(scores) {}
+      // your code here
+      let sumsum = scores.reduce((scoreSum, tempValue) => {
+        scoreSum = parseInt(scoreSum) + parseInt(tempValue);
+        return scoreSum;
+      }, 0);
+      console.log(sumsum);
+
+      /**
+       * @description 获得学生的平均分
+       * @param {array} scores
+       * @return {number} 学生的平均分
+       */
+      // function getTotalScore(scores) {}
+      // your code here
+      let avrScore = sumsum / scores.length;
+      // return avrScore;
+      console.log(Math.floor(avrScore));
+
+      /**
+       * @description 获得挂科的分数
+       * @param {array} scores
+       * @return {array} 返回没有及格的分数
+       */
+      // function getFailScores(scores) {}
+      // your code here
+      let failScore = scores.filter((number) => number < 60);
+      // return failScore;
+      console.log(failScore);
+
+      /**
+       * @description 获得加五分之后的成绩单，如果加五分之后，分数超过了100，就取100分
+       * @param {array} scores
+       * @return {array} 新的成绩单
+       */
+      // function getAddFiveScores(scores) {}
+      // your code here
+      let addScore = scores.map(function (number) {
+        if (number > 95) {
+          return 100;
+        }
+        return parseInt(number) + 5;
+      });
+      console.log(addScore);
+
+      /**
+       * @description 计算学生奖学金
+       * @param {array} scores
+       * @return { number} 奖学金
+       */
+      // function getPrize(scores) {}
+      // your code here
+      let prizeScore = scores.filter((number) => number > 90);
+      let prizeCost = prizeScore.length * 100;
+      console.log(prizeCost);
+      // return prizeCost;
+
+      //task2
+      // 实现两个数组拼接,返回一个新数组
+      function arrJoin(arr1, arr2) {
+        let arr = arr1.concat(arr2);
+        return arr;
+        // your implement
+      }
+      //测试用例
+      let arr1 = ["1", "2", "3"];
+      let arr2 = ["3", "6", "1"];
+      console.log(arrJoin(arr1, arr2)); // ['1','2','3','3','6','1']
+
+      // 利用reduce()实现两个数组归并
+      function arrMerge(arr1, arr2) {
+        // your implement
+
+        let mer = arr2.reduce((mergeRst, value) => {
+          if (arr1.includes(value) !== true) {
+            arr1.push(value);
+          }
+          return arr1;
+        }, "");
+        return mer;
+      }
+
+      //测试用例
+      console.log(arrMerge(arr1, arr2)); // ['1','2','3','6']
+
+      // 封装数组去重函数,去除数组中重复的元素,
+      function norepeat(arr) {
+        // your implement
+        let sum = new Array();
+        let newArr = arr.reduce((sum, value) => {
+          if (sum.includes(value) !== true) {
+            sum.push(value);
+          }
+          return sum;
+        }, []); //必须给初始值！
+        return newArr;
+      }
+
+      //测试用例
+      let arr = ["a", "ab", "a"];
+      console.log(norepeat(arr)); // ['a','ab']
+
+      // // 实现方法检测数组是否包含特定值
+      function inArray(value, x) {
+        return arr.includes(x);
+      }
+
+      // //测试用例
+
+      console.log(inArray(arr, "b")); // false
+      console.log(inArray(arr, "a")); //true
+
+      // // 实现多维数组变为一维数组
+      function matrixElements(arr) {
+        //your implement
+        return rows.reduce((sum, value) => {
+          sum = sum.concat(value);
+          return sum;
+        }, []);
+      }
+
+      // //测试用例
+      let rows = [
+        [2, 3, 5],
+        [1, 2, 4],
+        [8, 5, 5],
+      ];
+      console.log(matrixElements(rows)); //[2,3,5,1,2,4,8,5,5]
+    </script>
+  </head>
+  <body></body>
+</html>

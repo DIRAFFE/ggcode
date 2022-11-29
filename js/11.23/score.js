@@ -32,7 +32,7 @@ function printFirst(rows) {
 
   rows.forEach((element) => {
     const [name, score] = element;
-    if (score > maxScore) {
+    if (parseInt(score) > parseInt(maxScore)) {
       maxScore = score;
       maxName = name;
     }
@@ -56,7 +56,7 @@ function printLast(rows) {
 
   rows.forEach((element) => {
     const [name, score] = element;
-    if (score <= minScore) {
+    if (parseInt(score) <= parseInt(minScore)) {
       minScore = score;
       minName = name;
     }
@@ -80,9 +80,11 @@ function printAverage(rows) {
 
   rows.forEach((element) => {
     const [, score] = element;
-    sunNuM = +score;
+    sumNum = sumNum + parseInt(score);
     countNum++;
   });
-  averStr = `<li>平均分:${sumNum / countNum}</li>`;
+
+  console.log(countNum);
+  averStr = `<li>平均分:${parseInt(sumNum) / parseInt(countNum)}</li>`;
   return averStr;
 }
