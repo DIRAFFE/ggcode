@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      //创建对象
+      let bankAcount = {
+        name: "axu",
+        balance: 88880000,
+        rank: 43,
+        interestRatePercent: "5%",
+        deposit: function (amount) {},
+        withdraw: function (amount) {},
+        printAccountInfo: function () {
+          return `${this.name},您的存款总值：￥${this.balance} ,您的财富排名为：${this.rank}，您的银行利率为：${this.interestRatePercent}`;
+        },
+      };
+      console.log(bankAcount.printAccountInfo());
+      // 封装一个函数，检验 bankAcount 是否有 vip 这个属性，如果有就返回 true ，如果没有就返回 false
+      function isVipOrNot() {
+        if (bankAcount.vip == undefined) {
+          return false;
+        } else {
+          return true;
+        }
+      }
+      console.log(isVipOrNot());
+      // 封装一个函数，遍历 bankAcount 的属性，并且控制台中打印出来
+      function allPpt() {
+        return Object.keys(bankAcount);
+      }
+      console.log(allPpt());
+      console.log(Object.values(bankAcount));
+      console.log(Object.entries(bankAcount));
+
+      // 封装一个 isEmpty(obj) 判空函数，当对象没有属性的时候返回 true，否则返回 false。
+      function isEmpty(obj) {
+        if (Object.keys(obj).length == 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      let abb = {};
+      console.log(isEmpty(abb));
+    </script>
+  </head>
+  <body></body>
+</html>
