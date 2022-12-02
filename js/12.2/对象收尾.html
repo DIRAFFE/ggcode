@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      //结构赋值 交换变量值
+      let num1 = 1;
+      let num2 = 0;
+      //your complement
+      [num1, num2] = [num2, num1];
+      console.log(num1, num2); // - > 0 , 1
+
+      //结构对象
+      /*
+       * 解构要求
+       * name 属性赋值给变量 name。
+       * years 属性赋值给变量 age。
+       * math 属性复制给变量 mathScore。
+       * chemistry 属性复制给变量 chemistryScore。
+       * biology 属性复制给变量 biologyScore。
+       * sport 属性复制给变量 hobby1。
+       * dance 属性复制给变量 hobby2。
+       * marriageStaus 属性赋值给变量 marriageStaus（如果属性缺失则取默认值 false）
+       */
+
+      let person = {
+        name: "Amy",
+        years: 30,
+        score: {
+          math: 99,
+          chemistry: 80,
+          biology: 78,
+        },
+        hobbies: ["sport", "dance"],
+      };
+
+      // your complement
+      let {
+        name,
+        years: age,
+        score: {
+          math: mathScore,
+          chemistry: chemistryScore,
+          biology: biologyScore,
+        },
+        hobbies: [hobby1, hobby2],
+        marriageStaus = false,
+      } = person;
+
+      console.log(name); // Amy
+      console.log(age); // 30
+      console.log(mathScore); // 99
+      console.log(chemistryScore); // 80
+      console.log(biologyScore); // 78
+      console.log(hobby1); // sport
+      console.log(hobby2); // dance
+      console.log(marriageStaus); //false
+      //浅克隆
+      const student1 = {
+        name: "小明",
+        age: 15,
+        girlfriend: {
+          name: "小红",
+        },
+      };
+      function copy(obj) {
+        let newObj = {};
+        for (let i in obj) {
+          newObj[i] = obj[i];
+        }
+        return newObj;
+      }
+      const student2 = copy(student1);
+      console.log(student2);
+
+      //深克隆
+      function deepCopy(obj) {
+        let newObj = {};
+        for (let i in obj) {
+          if (obj[i] instanceof Object) {
+            newObj[i] = deepCopy(obj[i]);
+          } else {
+            newObj[i] = obj[i];
+          }
+        }
+        return newObj;
+      }
+      const student3 = deepCopy(student1);
+      student3.girlfriend.name = "小花";
+      console.log(student3);
+      console.log(student1);
+      //// 使用递归来实现一个深度克隆，可以复制一个目标对象，返回一个完整拷贝
+      // 被复制的对象类型会被限制为数字、字符串、布尔、日期、数组、Object对象。不会包含函数、正则对象等
+      function deepCopy(obj) {
+        let newObj = {};
+        for (let i in obj) {
+          if (obj[i] instanceof Object) {
+            newObj[i] = deepCopy(obj[i]);
+          } else {
+            newObj[i] = obj[i];
+          }
+        }
+        return newObj;
+      }
+      // 测试用例：
+      var srcObj = {
+        a: 1,
+        b: {
+          b1: ["hello", "hi"],
+          b2: "JavaScript",
+        },
+      };
+      var abObj = srcObj;
+      var tarObj = deepCopy(srcObj);
+
+      srcObj.a = 2;
+      srcObj.b.b1[0] = "Hello";
+
+      console.log(abObj.a);
+      console.log(abObj.b.b1[0]);
+
+      console.log(tarObj.a); // 1
+      console.log(tarObj.b.b1[0]); // "hello"
+      //对象属性配置 了解 Object.defineProperty(),实现一个简易的数据双向绑定
+    </script>
+  </head>
+  <body></body>
+</html>
